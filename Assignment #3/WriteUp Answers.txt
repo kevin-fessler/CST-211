@@ -1,0 +1,25 @@
+Kevin Fessler
+Data Structures 211
+Description
+
+
+Write-up
+1.	How is traversing a list using a iterator compare to using an index?
+
+Traversing a list using an iterator is much easier than using an index. Th point of an doubly linked list iterator vs an index is to make the insertion and removal of data in the within the nodes much faster.
+2.	How does an iterator know when it's at the end?
+
+Since a node in a doubly linked list points to both it's previous and next node, the iterator will reach a point at the last element that is "NULL" or "0" and can not iterate any further. The element that points to nothing is the element that is at the very end of the list. 
+3.	Write the code that would allow me to specify a start and end value (value inside of the node, not an index) and would generate a sublist of everything inbetween (inclusive). 
+
+ char val = start_node; 		    	// Create a start node
+    while (map.count(val) > 0)		// Iterate through all the elements until the end of 					
+                                  //    the node
+ 	 {
+		val = map.find(val)->second;
+ 		 cout << val;
+	}
+
+4.	What would be the big O notation for the function in question 3?
+		
+		The big O notation for the function would be o(n^val)
