@@ -1,0 +1,79 @@
+/***********************************************************
+* Author:		    Kevin Fessler
+* Date Created :	    10/6/2015
+* Last Modification Date :  10/7/2015
+* Lab Number :		    CST 211
+* File name :		    write-up_answers.txt
+*
+*****************************************************************
+
+Write-up Questions
+
+
+1. What considerations would have to be taken to add a columns class? 
+   What would be the advantage?
+
+	To add a column class, one must consider the rows of the array upon
+	which the columns are built upon. The large advantage to having a 
+	columns class would be easier access/finding a particular row
+	knowing the column. 
+
+2. What is forward declaration and how is it used? Why does it work?
+
+	Forward declaration is declaring an identifier (function prototype, etc.)
+	so that the compiler would know what to add when compiling main.cpp.
+	The compiler wants to ensure the programmer hasn't made spelling mistakes
+	or passed the wrong number of arguments to the function. Most of the 
+	time, forwards declaration is used to significantly reduce 
+	build times.
+
+	Forward declaration works when the compiler encounters a call to a function;
+	it’ll understand that the client is making a function call
+	and can check to ensure the client is calling the function correctly
+	even if it doesn’t know how or where the function is defined.
+
+
+3a. What would the code look like to rotate a 2d array by 90 degrees? 
+
+
+	int array[x][y];		// Size of the array (set x and y)
+					// Assuming the array is of int values
+
+	int n=4;			// Number size to move
+	int temp;			// Temporary element to work with
+
+	for (int i=0; i<n/2; i++){		// Loop through rows
+        	for (int j=i; j<n-i-1; j++){	// Loop through columns
+
+                	tmp=a[i][j];		// Get the temporary position of the array
+
+              		a[i][j]=a[j][n-i-1];		// Copy the data around...
+                	a[j][n-i-1]=a[n-i-1][n-j-1];
+                	a[n-i-1][n-j-1]=a[n-j-1][i];
+
+                	a[n-j-1][i]=tmp;		// Move it into temp and 
+							// store it in the appropriate index 
+     		   }
+	}
+
+   b. What would be the big-O notation for this operation?
+
+
+	1	2	3
+	4	5	6
+	7	8	9  
+
+	. . . 
+
+	3	6	9
+	2	5	8
+	1	4	7
+
+
+	The big-O for this proceedure would have to be at least O(n^2).
+
+
+
+
+
+*/

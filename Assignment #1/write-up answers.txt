@@ -1,0 +1,49 @@
+/***********************************************************
+* Author:		    Kevin Fessler
+* Date Created :	    10/2/2015
+* Last Modification Date :  10/2/2015
+* Lab Number :		    CST 211
+* File name :		    write-up_answers.txt
+*
+*****************************************************************
+
+Write-up Questions 
+
+1. What are the considerations you had to include in your operator= function?
+
+	I had to take into account that I needed to check for self-assignment and 
+	dynamically allocate memory for the array using the new and delete operators.
+
+
+
+2. What is the similarity and difference between copy constructor and operator= functions?
+
+	The copy constructor copies data much like the assignment operator (operator=),
+	However, the assignment operator assigns data to another data structure. The
+	Copy constructor makes a copy of the data to a structure of a similar type.
+	More specifically the difference arises when you look at when each is called: 
+	the copy constructor is called when a new object
+	is created from an existing object to create an existing object. The 
+	assignment operator is called when an initialized object
+	is assigned a new value from another already existing object.
+
+
+
+3. What steps did you take to ensure no memory leaks?
+	
+	To avoid memory leaks, I ran my program in the debugger and created many different
+	sizes of arrays. If I delete an array, I should be able to see that all of the data
+	allocated to it is now empty. If there is still memory that is occupied in (as shown
+	by the debugger) I have a memory leak. I continually checked my program to ensure that
+	there were no memory leaks during the construction or destruction of any array. 
+
+
+
+4. In terms of big O how long would it take to find an element of this array? 
+   How could this be improved? What would the expression become?
+
+	In terms of big O, it would take O(n) to find an element in this array. This 
+	could be improved by reducing the number of function calls or changing the 
+	type of search. If we were to use a binary search, the expression would become O(log n).
+
+*/
